@@ -34,7 +34,7 @@
 <script>
 const branchPhones={'Кабанбай батыра 2/2':'77759401233','Тауелсиздик 25':'77011092575','Мангилик ел 47':'77011082575'};
 const book=document.getElementById('book');
-document.querySelectorAll('input[name="branch"]').forEach(input=>input.addEventListener('change',()=>{const address=input.value;const message=`Здравствуйте! Хочу забронировать столик в Жигуль Бар`;book.href=`https://wa.me/${branchPhones[address]}?text=${encodeURIComponent(message)}`;book.removeAttribute('aria-disabled');document.getElementById('selection').textContent=address;document.getElementById('feedback').textContent='';}));
+document.querySelectorAll('input[name="branch"]').forEach(input=>input.addEventListener('change',()=>{const address=input.value;const message=`Здравствуйте! Хочу забронировать столик`;book.href=`https://wa.me/${branchPhones[address]}?text=${encodeURIComponent(message)}`;book.removeAttribute('aria-disabled');document.getElementById('selection').textContent=address;document.getElementById('feedback').textContent='';}));
 book.addEventListener('click',event=>{if(book.getAttribute('aria-disabled')==='true'){event.preventDefault();document.getElementById('feedback').textContent='Сначала выбери удобный филиал.';document.getElementById('branch-1').focus();}});
 book.addEventListener('keydown',event=>{if(event.key==='Enter'&&!book.hasAttribute('href')){event.preventDefault();book.click();}});
 </script>
